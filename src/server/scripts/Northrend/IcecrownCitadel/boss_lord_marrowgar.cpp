@@ -148,7 +148,7 @@ struct boss_lord_marrowgar : public BossAI
         events.ScheduleEvent(EVENT_ENABLE_BONE_SLICE, 10s);
         events.ScheduleEvent(EVENT_BONE_SPIKE_GRAVEYARD, 15s, EVENT_GROUP_SPECIAL);
         events.ScheduleEvent(EVENT_COLDFLAME, 5s, EVENT_GROUP_SPECIAL);
-        events.ScheduleEvent(EVENT_WARN_BONE_STORM, 10s, 10s); // Fixed to Naerzone Test
+        events.ScheduleEvent(EVENT_WARN_BONE_STORM, 90s, 95s); // com
         events.ScheduleEvent(EVENT_ENRAGE, 7min);              // #UPDATE_ENRAGE Changed from 10 to 7
         _boneSlice = false;
         _boneSpikeImmune.clear();
@@ -218,7 +218,7 @@ struct boss_lord_marrowgar : public BossAI
                 DoCast(me, SPELL_BONE_STORM);
                 events.DelayEvents(3s, EVENT_GROUP_SPECIAL);
                 events.ScheduleEvent(EVENT_BONE_STORM_BEGIN, 3050ms);
-                events.ScheduleEvent(EVENT_WARN_BONE_STORM, 90s, 95s);
+                events.ScheduleEvent(EVENT_WARN_BONE_STORM, 10s, 10s); // New Fix
                 break;
             case EVENT_BONE_STORM_BEGIN:
                 if (Aura *pStorm = me->GetAura(SPELL_BONE_STORM))
