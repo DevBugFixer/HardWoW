@@ -148,8 +148,8 @@ struct boss_lord_marrowgar : public BossAI
         events.ScheduleEvent(EVENT_ENABLE_BONE_SLICE, 10s);
         events.ScheduleEvent(EVENT_BONE_SPIKE_GRAVEYARD, 15s, EVENT_GROUP_SPECIAL);
         events.ScheduleEvent(EVENT_COLDFLAME, 5s, EVENT_GROUP_SPECIAL);
-        events.ScheduleEvent(EVENT_WARN_BONE_STORM, 10s, 10s);
-        events.ScheduleEvent(EVENT_ENRAGE, 7min); // #UPDATE_ENRAGE Changed from 10 to 7
+        events.ScheduleEvent(EVENT_WARN_BONE_STORM, 10s, 10s); // Fixed to Naerzone Test
+        events.ScheduleEvent(EVENT_ENRAGE, 7min);              // #UPDATE_ENRAGE Changed from 10 to 7
         _boneSlice = false;
         _boneSpikeImmune.clear();
     }
