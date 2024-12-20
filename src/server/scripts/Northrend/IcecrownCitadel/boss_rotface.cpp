@@ -132,8 +132,7 @@ struct boss_rotface : public BossAI
         }
 
         me->setActive(true);
-        events.ScheduleEvent(EVENT_TALK_AGGRO, 4s);
-
+        Talk(SAY_AGGRO);
         if (Creature *professor = ObjectAccessor::GetCreature(*me, instance->GetGuidData(DATA_PROFESSOR_PUTRICIDE)))
             professor->AI()->DoAction(ACTION_ROTFACE_COMBAT);
 
