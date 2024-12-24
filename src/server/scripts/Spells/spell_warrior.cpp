@@ -913,6 +913,23 @@ class spell_warr_vigilance_trigger : public SpellScript
     }
 };
 
+// 47450 - Heroic Strike (Rank 13)
+class spell_warr_heroic_strike : public SpellScript
+{
+    PrepareSpellScript(spell_warr_heroic_strike);
+
+    void HandleDamage(SpellEffIndex /*effIndex*/)
+    {
+        // Set the base damage to 1500
+        SetEffectValue(1500);
+    }
+
+    void Register() override
+    {
+        OnEffectLaunchTarget += SpellEffectFn(spell_warr_heroic_strike::HandleDamage, EFFECT_0, SPELL_EFFECT_SCHOOL_DAMAGE);
+    }
+};
+
 void AddSC_warrior_spell_scripts()
 {
     RegisterSpellScript(spell_warr_bloodthirst);
@@ -943,5 +960,5 @@ void AddSC_warrior_spell_scripts()
     RegisterSpellScript(spell_warr_vigilance);
     RegisterSpellScript(spell_warr_vigilance_redirect_threat);
     RegisterSpellScript(spell_warr_vigilance_trigger);
-    RegisterSpellScript(spell_warr_heroic_strike); // Custom spell
+    RegisterSpellScript(spell_warr_heroic_strike); // Custom spell script
 }
